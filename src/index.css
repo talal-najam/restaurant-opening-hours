@@ -1,0 +1,11 @@
+.date-wrapper {
+    border: 1px solid black;
+    padding: 1rem;
+    font-family: sans-serif;
+    width: 20vw;
+}
+
+.date-wrapper h2 {
+    margin-top: 0;
+}
+
