@@ -1,0 +1,16 @@
+.active {
+    font-weight: bold;
+}
+
+.time-interval {
+    display: flex;
+    padding: 0.5rem 1rem;
+}
+
+.timing-container { 
+    margin-left: 1rem;
+}
+
+.time-item {
+    width: 100%;
+}
