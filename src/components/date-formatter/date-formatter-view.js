@@ -4,7 +4,7 @@ const DateFormatter = ({ data }) => {
   return (
     <div className="date-formatter-wrapper">
       <h3>Restaurant Opening Hours:</h3>
-      <div role="list" className="intervals-wrapper">
+      <div role="list">
         {data.map((weekday, index) => (
           <div role="listitem" key={index}>
             <Date
