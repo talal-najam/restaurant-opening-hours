@@ -1,0 +1,15 @@
+
+.date-formatter-wrapper {
+    border: 1px solid black;
+    padding: 1rem;
+    font-family: sans-serif;
+    width: 350px;
+    min-width: 350px;
+}
+
+.date-formatter-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+}

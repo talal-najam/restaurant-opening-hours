@@ -1,0 +1,23 @@
+.active {
+    font-weight: bold;
+}
+
+.time-interval {
+    display: flex;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.time-item {
+    width: 100%;
+    color: #595959
+}
+
+.active > .time-item > span {
+    color: black !important;
+    background-origin: black;
+}
+
+.stacked-timings:not(:first-child) {
+    margin-top: 7px;
+}
