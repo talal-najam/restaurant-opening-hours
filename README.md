@@ -11,7 +11,7 @@ To run this project locally:
 1. Clone the git repository on to your local machine
 ```bash
 # clone git repository
-$ git clone https://github.com/talal-najam/restaurant-date-formatter.git
+$ git clone https://github.com/talal-najam/restaurant-opening-hours.git
 ```
 
 2. In the project directory, install all required dependencies by running:
