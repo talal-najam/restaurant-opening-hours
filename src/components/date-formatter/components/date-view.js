@@ -13,7 +13,7 @@ const DateView = ({ day, timings, isClosed }) => {
       </div>
       <div className="time-item timing-container">
         {isClosed ? (
-          <div >
+          <div>
             <span>Closed</span>
           </div>
         ) :

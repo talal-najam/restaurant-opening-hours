@@ -13,9 +13,8 @@
     color: #595959
 }
 
-.active > .time-item > span {
+.active span {
     color: black !important;
-    background-origin: black;
 }
 
 .stacked-timings:not(:first-child) {
