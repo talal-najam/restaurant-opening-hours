@@ -15,8 +15,8 @@ const Date = ({ day, timings, isClosed }) => {
             <span>Closed</span>
           </div>
         ) :
-          timings.map((pair, index) => (
-            <div class="stacked-timings">
+          timings.map((pair) => (
+            <div key={day} className="stacked-timings">
               <span>{pair}</span>
             </div>
           ))

@@ -4,22 +4,30 @@ import DateFormatterView from './date-formatter-view';
 import { WEEK_DAYS } from '../../utils/constants';
 
 
-// Handle overlapping intervals
+/**
+ * TODO:
+ * Items that I'd like to add:
+ * - Unit tests
+ * - Validation/error handling
+ * - Stories
+ * - Dockerfile
+ */
+
+// Handle overlapping intervals and return them
 const getIntervals = (day, timeRange) => {
   let range = timeRange[day]
   let result = [];
-  let nextDay = [];
 
   if (range && range.length === 0) {
     return [];
   }
 
-  if (range.length > 0 && range[range.length - 1].type === 'open') {
+  // if restaurant doesn't close on the same day, find next available close
+  if (range && range.length > 0 && range[range.length - 1].type === 'open') {
     let type = '';
     let retries = 0
-
-    // if restaurant doesn't close on the same day, find next available close
-    while (type != 'close' && retries < 7) {
+    let nextDay;
+    while (type !== 'close' && retries < 7) {
       let currIdx = WEEK_DAYS.indexOf(day);
       nextDay = WEEK_DAYS[currIdx + 1] || WEEK_DAYS[0];
 
@@ -34,18 +42,17 @@ const getIntervals = (day, timeRange) => {
     range = [...range, timeRange[nextDay][0]]
   }
 
-  // If first item is close, remove from current interval
+  // If first item is closing time, remove from current interval
   if (range[0].type === 'close') {
     range = range.slice(1)
   }
   result = range.map(obj => convertSecondsToDate(obj.value));
-
   return result;
 }
 
-// Generate timing pairs of opening & closing hours
 const parseIntervals = (intervals) => {
   let result = []
+  // Create pairs of opening and closing times
   for (let i = 0; i < intervals.length; i += 2) {
     const chunk = `${intervals[i]} - ${intervals[i + 1]}`
     result.push(chunk);
