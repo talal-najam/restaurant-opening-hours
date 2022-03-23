@@ -32,7 +32,8 @@ const getIntervals = (day, timeRange) => {
       nextDay = WEEK_DAYS[currIdx + 1] || WEEK_DAYS[0];
 
       if (timeRange[nextDay].length > 0 && timeRange[nextDay][0].type === 'close') {
-        type = 'close'
+        type = 'close';
+        break;
       }
       retries++;
     }
