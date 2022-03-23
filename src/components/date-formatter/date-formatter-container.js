@@ -1,5 +1,6 @@
 import { convertSecondsToDate, capitalizeFirstLetter } from '../../utils/helpers';
 import './date-formatter-styles.css'
+import { object } from 'prop-types';
 import DateFormatterView from './date-formatter-view';
 import { WEEK_DAYS } from '../../utils/constants';
 
@@ -74,7 +75,7 @@ const getOpeningHours = (day, range) => {
   return result;
 }
 
-const DateFormatter = ({ data }) => {
+const DateFormatterContainer = ({ data }) => {
   const openingHours = WEEK_DAYS.map(day => getOpeningHours(day, data));
   return (
     <>
@@ -85,4 +86,8 @@ const DateFormatter = ({ data }) => {
   )
 }
 
-export default DateFormatter;
+DateFormatterContainer.propTypes = {
+  data: object
+}
+
+export default DateFormatterContainer;

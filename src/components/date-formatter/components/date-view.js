@@ -1,9 +1,11 @@
 import { getDayName } from '../../../utils/helpers';
+import { string, bool, array} from 'prop-types';
 import './date-styles.css';
 
-const Date = ({ day, timings, isClosed }) => {
+const DateView = ({ day, timings, isClosed }) => {
   const today = getDayName('en');
   let isToday = today === day;
+  
   return (
     <div className={`time-interval ${isToday ? 'active' : ''}`}>
       <div className='time-item'>
@@ -27,4 +29,10 @@ const Date = ({ day, timings, isClosed }) => {
   )
 }
 
-export default Date;
+DateView.propTypes = {
+  day: string,
+  timings: array,
+  isClosed: bool
+}
+
+export default DateView;

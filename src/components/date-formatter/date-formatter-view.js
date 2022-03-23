@@ -1,6 +1,7 @@
 import { Date } from './components';
+import { array } from 'prop-types';
 
-const DateFormatter = ({ data }) => {
+const DateFormatterView = ({ data }) => {
   return (
     <div className="date-formatter-wrapper">
       <h3>Restaurant Opening Hours:</h3>
@@ -16,4 +17,9 @@ const DateFormatter = ({ data }) => {
     </div>
   )
 }
-export default DateFormatter;
+
+DateFormatterView.propTypes = {
+  data: array
+}
+
+export default DateFormatterView;
